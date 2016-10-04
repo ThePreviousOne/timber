@@ -21,9 +21,17 @@ public class DemoActivity extends Activity {
     Timber.d("Activity Created");
   }
 
-  @OnClick({ R.id.hello, R.id.hey, R.id.hi })
+  @OnClick({ R.id.hello, R.id.hey, R.id.hi, R.id.sup })
   public void greetingClicked(Button button) {
-    Timber.i("A button with ID %s was clicked to say '%s'.", button.getId(), button.getText());
-    Toast.makeText(this, "Check logcat for a greeting!", LENGTH_SHORT).show();
+    if (button.getId() == R.id.sup) {
+      Timber.loud("This is very noticable")
+      Toast.makeText(DemoActivity.this, "Check logcat for loud log demo", Toast.LENGTH_SHORT).show();
+    } else if (button.getId() == R.id.hey) {
+      Timber.w("")
+      Toast.makeText(DemoActivity.this, "this deminstrates the new null handling ", Toast.LENGTH_SHORT).show();
+    } else {
+      Timber.i("A button with ID %s was clicked to say '%s'.", button.getId(), button.getText());
+      Toast.makeText(this, "Check logcat for a greeting!", LENGTH_SHORT).show();
+    }
   }
 }

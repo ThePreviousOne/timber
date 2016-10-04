@@ -4,11 +4,6 @@ android {
   compileSdkVersion rootProject.ext.compileSdkVersion
   buildToolsVersion rootProject.ext.buildToolsVersion
 
-  compileOptions {
-    sourceCompatibility rootProject.ext.sourceCompatibilityVersion
-    targetCompatibility rootProject.ext.targetCompatibilityVersion
-  }
-
   defaultConfig {
     applicationId 'com.example.timber'
     minSdkVersion rootProject.ext.minSdkVersion
